@@ -1,0 +1,509 @@
+﻿<Window x:Class="围棋学习助手.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:my="clr-namespace:围棋学习助手"
+		WindowState="Maximized"
+        Title="围棋学习助手" Height="700" Width="910"
+		Loaded="Window_Loaded"
+		Name="TheWindow"
+		MinHeight="700" MinWidth="910">
+	<Window.Background>
+		<LinearGradientBrush>
+			<GradientStop Color="LightCyan" Offset="0" />
+			<GradientStop Color="Pink" Offset="1" />
+		</LinearGradientBrush>
+	</Window.Background>
+	<Grid HorizontalAlignment="Center">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="665" />
+			<ColumnDefinition Width="230" />
+		</Grid.ColumnDefinitions>
+		<!--棋盘区域-->
+		<Grid Name="MainGrid"
+			  Height="665" Width="665" Grid.Column="0"
+			  MouseEnter="MainGrid_MouseEnter"
+			  MouseLeave="MainGrid_MouseLeave">
+			<Grid.Background>
+				<ImageBrush ImageSource="/围棋学习助手;component/Images/bg.png" Stretch="None" TileMode="None" />
+			</Grid.Background>
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<Grid.Resources>
+				<Style TargetType="TextBlock">
+					<Setter Property="VerticalAlignment" Value="Center" />
+					<Setter Property="HorizontalAlignment" Value="Center" />
+					<Setter Property="FontSize" Value="14" />
+					<Setter Property="Foreground" Value="Red" />
+				</Style>
+				<Style TargetType="Ellipse">
+					<Setter Property="Height" Value="31" />
+					<Setter Property="Width" Value="31" />
+				</Style>		
+			</Grid.Resources>
+			<my:CheeseGrid Grid.Row="0" Grid.Column="0" RowIndex="0" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="1" RowIndex="0" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="2" RowIndex="0" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="3" RowIndex="0" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="4" RowIndex="0" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="5" RowIndex="0" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="6" RowIndex="0" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="7" RowIndex="0" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="8" RowIndex="0" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="9" RowIndex="0" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="10" RowIndex="0" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="11" RowIndex="0" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="12" RowIndex="0" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="13" RowIndex="0" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="14" RowIndex="0" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="15" RowIndex="0" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="16" RowIndex="0" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="17" RowIndex="0" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="0" Grid.Column="18" RowIndex="0" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="0" RowIndex="1" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="1" RowIndex="1" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="2" RowIndex="1" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="3" RowIndex="1" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="4" RowIndex="1" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="5" RowIndex="1" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="6" RowIndex="1" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="7" RowIndex="1" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="8" RowIndex="1" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="9" RowIndex="1" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="10" RowIndex="1" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="11" RowIndex="1" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="12" RowIndex="1" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="13" RowIndex="1" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="14" RowIndex="1" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="15" RowIndex="1" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="16" RowIndex="1" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="17" RowIndex="1" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="1" Grid.Column="18" RowIndex="1" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="0" RowIndex="2" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="1" RowIndex="2" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="2" RowIndex="2" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="3" RowIndex="2" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="4" RowIndex="2" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="5" RowIndex="2" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="6" RowIndex="2" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="7" RowIndex="2" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="8" RowIndex="2" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="9" RowIndex="2" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="10" RowIndex="2" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="11" RowIndex="2" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="12" RowIndex="2" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="13" RowIndex="2" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="14" RowIndex="2" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="15" RowIndex="2" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="16" RowIndex="2" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="17" RowIndex="2" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="2" Grid.Column="18" RowIndex="2" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="0" RowIndex="3" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="1" RowIndex="3" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="2" RowIndex="3" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="3" RowIndex="3" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="4" RowIndex="3" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="5" RowIndex="3" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="6" RowIndex="3" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="7" RowIndex="3" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="8" RowIndex="3" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="9" RowIndex="3" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="10" RowIndex="3" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="11" RowIndex="3" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="12" RowIndex="3" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="13" RowIndex="3" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="14" RowIndex="3" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="15" RowIndex="3" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="16" RowIndex="3" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="17" RowIndex="3" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="3" Grid.Column="18" RowIndex="3" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="0" RowIndex="4" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="1" RowIndex="4" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="2" RowIndex="4" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="3" RowIndex="4" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="4" RowIndex="4" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="5" RowIndex="4" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="6" RowIndex="4" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="7" RowIndex="4" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="8" RowIndex="4" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="9" RowIndex="4" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="10" RowIndex="4" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="11" RowIndex="4" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="12" RowIndex="4" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="13" RowIndex="4" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="14" RowIndex="4" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="15" RowIndex="4" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="16" RowIndex="4" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="17" RowIndex="4" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="4" Grid.Column="18" RowIndex="4" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="0" RowIndex="5" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="1" RowIndex="5" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="2" RowIndex="5" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="3" RowIndex="5" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="4" RowIndex="5" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="5" RowIndex="5" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="6" RowIndex="5" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="7" RowIndex="5" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="8" RowIndex="5" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="9" RowIndex="5" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="10" RowIndex="5" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="11" RowIndex="5" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="12" RowIndex="5" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="13" RowIndex="5" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="14" RowIndex="5" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="15" RowIndex="5" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="16" RowIndex="5" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="17" RowIndex="5" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="5" Grid.Column="18" RowIndex="5" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="0" RowIndex="6" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="1" RowIndex="6" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="2" RowIndex="6" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="3" RowIndex="6" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="4" RowIndex="6" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="5" RowIndex="6" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="6" RowIndex="6" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="7" RowIndex="6" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="8" RowIndex="6" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="9" RowIndex="6" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="10" RowIndex="6" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="11" RowIndex="6" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="12" RowIndex="6" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="13" RowIndex="6" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="14" RowIndex="6" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="15" RowIndex="6" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="16" RowIndex="6" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="17" RowIndex="6" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="6" Grid.Column="18" RowIndex="6" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="0" RowIndex="7" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="1" RowIndex="7" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="2" RowIndex="7" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="3" RowIndex="7" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="4" RowIndex="7" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="5" RowIndex="7" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="6" RowIndex="7" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="7" RowIndex="7" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="8" RowIndex="7" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="9" RowIndex="7" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="10" RowIndex="7" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="11" RowIndex="7" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="12" RowIndex="7" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="13" RowIndex="7" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="14" RowIndex="7" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="15" RowIndex="7" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="16" RowIndex="7" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="17" RowIndex="7" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="7" Grid.Column="18" RowIndex="7" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="0" RowIndex="8" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="1" RowIndex="8" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="2" RowIndex="8" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="3" RowIndex="8" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="4" RowIndex="8" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="5" RowIndex="8" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="6" RowIndex="8" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="7" RowIndex="8" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="8" RowIndex="8" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="9" RowIndex="8" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="10" RowIndex="8" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="11" RowIndex="8" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="12" RowIndex="8" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="13" RowIndex="8" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="14" RowIndex="8" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="15" RowIndex="8" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="16" RowIndex="8" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="17" RowIndex="8" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="8" Grid.Column="18" RowIndex="8" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="0" RowIndex="9" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="1" RowIndex="9" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="2" RowIndex="9" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="3" RowIndex="9" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="4" RowIndex="9" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="5" RowIndex="9" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="6" RowIndex="9" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="7" RowIndex="9" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="8" RowIndex="9" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="9" RowIndex="9" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="10" RowIndex="9" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="11" RowIndex="9" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="12" RowIndex="9" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="13" RowIndex="9" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="14" RowIndex="9" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="15" RowIndex="9" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="16" RowIndex="9" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="17" RowIndex="9" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="9" Grid.Column="18" RowIndex="9" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="0" RowIndex="10" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="1" RowIndex="10" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="2" RowIndex="10" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="3" RowIndex="10" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="4" RowIndex="10" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="5" RowIndex="10" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="6" RowIndex="10" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="7" RowIndex="10" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="8" RowIndex="10" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="9" RowIndex="10" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="10" RowIndex="10" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="11" RowIndex="10" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="12" RowIndex="10" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="13" RowIndex="10" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="14" RowIndex="10" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="15" RowIndex="10" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="16" RowIndex="10" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="17" RowIndex="10" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="10" Grid.Column="18" RowIndex="10" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="0" RowIndex="11" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="1" RowIndex="11" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="2" RowIndex="11" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="3" RowIndex="11" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="4" RowIndex="11" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="5" RowIndex="11" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="6" RowIndex="11" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="7" RowIndex="11" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="8" RowIndex="11" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="9" RowIndex="11" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="10" RowIndex="11" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="11" RowIndex="11" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="12" RowIndex="11" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="13" RowIndex="11" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="14" RowIndex="11" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="15" RowIndex="11" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="16" RowIndex="11" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="17" RowIndex="11" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="11" Grid.Column="18" RowIndex="11" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="0" RowIndex="12" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="1" RowIndex="12" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="2" RowIndex="12" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="3" RowIndex="12" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="4" RowIndex="12" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="5" RowIndex="12" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="6" RowIndex="12" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="7" RowIndex="12" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="8" RowIndex="12" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="9" RowIndex="12" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="10" RowIndex="12" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="11" RowIndex="12" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="12" RowIndex="12" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="13" RowIndex="12" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="14" RowIndex="12" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="15" RowIndex="12" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="16" RowIndex="12" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="17" RowIndex="12" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="12" Grid.Column="18" RowIndex="12" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="0" RowIndex="13" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="1" RowIndex="13" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="2" RowIndex="13" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="3" RowIndex="13" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="4" RowIndex="13" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="5" RowIndex="13" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="6" RowIndex="13" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="7" RowIndex="13" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="8" RowIndex="13" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="9" RowIndex="13" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="10" RowIndex="13" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="11" RowIndex="13" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="12" RowIndex="13" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="13" RowIndex="13" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="14" RowIndex="13" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="15" RowIndex="13" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="16" RowIndex="13" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="17" RowIndex="13" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="13" Grid.Column="18" RowIndex="13" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="0" RowIndex="14" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="1" RowIndex="14" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="2" RowIndex="14" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="3" RowIndex="14" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="4" RowIndex="14" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="5" RowIndex="14" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="6" RowIndex="14" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="7" RowIndex="14" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="8" RowIndex="14" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="9" RowIndex="14" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="10" RowIndex="14" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="11" RowIndex="14" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="12" RowIndex="14" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="13" RowIndex="14" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="14" RowIndex="14" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="15" RowIndex="14" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="16" RowIndex="14" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="17" RowIndex="14" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="14" Grid.Column="18" RowIndex="14" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="0" RowIndex="15" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="1" RowIndex="15" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="2" RowIndex="15" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="3" RowIndex="15" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="4" RowIndex="15" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="5" RowIndex="15" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="6" RowIndex="15" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="7" RowIndex="15" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="8" RowIndex="15" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="9" RowIndex="15" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="10" RowIndex="15" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="11" RowIndex="15" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="12" RowIndex="15" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="13" RowIndex="15" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="14" RowIndex="15" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="15" RowIndex="15" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="16" RowIndex="15" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="17" RowIndex="15" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="15" Grid.Column="18" RowIndex="15" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="0" RowIndex="16" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="1" RowIndex="16" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="2" RowIndex="16" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="3" RowIndex="16" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="4" RowIndex="16" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="5" RowIndex="16" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="6" RowIndex="16" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="7" RowIndex="16" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="8" RowIndex="16" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="9" RowIndex="16" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="10" RowIndex="16" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="11" RowIndex="16" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="12" RowIndex="16" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="13" RowIndex="16" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="14" RowIndex="16" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="15" RowIndex="16" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="16" RowIndex="16" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="17" RowIndex="16" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="16" Grid.Column="18" RowIndex="16" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="0" RowIndex="17" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="1" RowIndex="17" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="2" RowIndex="17" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="3" RowIndex="17" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="4" RowIndex="17" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="5" RowIndex="17" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="6" RowIndex="17" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="7" RowIndex="17" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="8" RowIndex="17" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="9" RowIndex="17" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="10" RowIndex="17" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="11" RowIndex="17" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="12" RowIndex="17" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="13" RowIndex="17" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="14" RowIndex="17" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="15" RowIndex="17" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="16" RowIndex="17" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="17" RowIndex="17" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="17" Grid.Column="18" RowIndex="17" ColIndex="18" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="0" RowIndex="18" ColIndex="0" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="1" RowIndex="18" ColIndex="1" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="2" RowIndex="18" ColIndex="2" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="3" RowIndex="18" ColIndex="3" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="4" RowIndex="18" ColIndex="4" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="5" RowIndex="18" ColIndex="5" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="6" RowIndex="18" ColIndex="6" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="7" RowIndex="18" ColIndex="7" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="8" RowIndex="18" ColIndex="8" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="9" RowIndex="18" ColIndex="9" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="10" RowIndex="18" ColIndex="10" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="11" RowIndex="18" ColIndex="11" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="12" RowIndex="18" ColIndex="12" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="13" RowIndex="18" ColIndex="13" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="14" RowIndex="18" ColIndex="14" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="15" RowIndex="18" ColIndex="15" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="16" RowIndex="18" ColIndex="16" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="17" RowIndex="18" ColIndex="17" />
+			<my:CheeseGrid Grid.Row="18" Grid.Column="18" RowIndex="18" ColIndex="18" />
+
+		</Grid>
+		<!--控制区域-->
+		<Grid Grid.Column="1">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="4*" />
+				<RowDefinition Height="6*" />
+			</Grid.RowDefinitions>
+			<!--棋子选项-->
+			<StackPanel VerticalAlignment="Center" Grid.Row="0">
+				<StackPanel.Resources>
+					<Style TargetType="Border">
+						<Setter Property="Margin" Value="6,6,100,6" />
+						<Setter Property="Padding" Value="3" />
+						<Setter Property="BorderBrush" Value="DarkBlue" />
+					</Style>
+					<Style TargetType="Ellipse">
+						<Setter Property="Height" Value="28" />
+						<Setter Property="Width" Value="28" />
+					</Style>
+					<Style TargetType="TextBlock">
+						<Setter Property="FontSize" Value="22" />
+					</Style>
+				</StackPanel.Resources>
+				<Border Name="ClearBorder" Background="Khaki"
+						BorderThickness="{Binding ElementName=TheWindow, Path=ClearThickness}"
+						MouseEnter="TypeBorder_MouseEnter"
+						MouseLeave="TypeBorder_MouseLeave"
+						MouseLeftButtonDown="ClearBorder_MouseLeftButtonDown">
+					<StackPanel Orientation="Horizontal">
+						<Ellipse Fill="LightCyan" />
+						<TextBlock>清除</TextBlock>
+					</StackPanel>
+				</Border>
+				<Border Name="BlackBorder" Background="Yellow"
+						BorderThickness="{Binding ElementName=TheWindow, Path=BlackThickness}"
+						MouseEnter="TypeBorder_MouseEnter"
+						MouseLeave="TypeBorder_MouseLeave"
+						MouseLeftButtonDown="BlackBorder_MouseLeftButtonDown">
+					<StackPanel Orientation="Horizontal">
+						<Ellipse Fill="Black" />
+						<TextBlock>执黑</TextBlock>
+					</StackPanel>
+				</Border>
+				<Border Name="WhiteBorder" Background="Pink"
+						BorderThickness="{Binding ElementName=TheWindow, Path=WhiteThickness}"
+						MouseEnter="TypeBorder_MouseEnter"
+						MouseLeave="TypeBorder_MouseLeave"
+						MouseLeftButtonDown="WhiteBorder_MouseLeftButtonDown">
+					<StackPanel Orientation="Horizontal">
+						<Ellipse Fill="White" />
+						<TextBlock>执白</TextBlock>
+					</StackPanel>
+				</Border>
+				<Border>
+					<CheckBox HorizontalAlignment="Right" IsChecked="True">
+					<TextBlock Name="AutoBlackWhite" FontSize="14">黑白轮执</TextBlock>
+					</CheckBox>
+				</Border>
+			</StackPanel>
+			<!--棋子选项-->
+			<Grid Grid.Row="1">
+			</Grid>
+		</Grid>
+	</Grid>
+</Window>
